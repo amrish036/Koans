@@ -15,15 +15,18 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError, "The triangle is not valid" unless (a + b) > c && (a + c) > b && (b + c) > a
+
   if a == b && a == c 
   	:equilateral
   elsif a == b || b == c || a == c
-  		:isosceles
+  	:isosceles
   else
-  		:scalene 
+  	:scalene 
   end
 end
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
+
 end
